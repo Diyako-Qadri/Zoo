@@ -46,3 +46,18 @@ header {
   min-height: 100%;
   background-color: #907ad6;
 }
+
+
+  
+  nav ul {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0 24px;
+  }
+  
+  nav ul.submenu {
+    display: none;
+    padding: var(--spacing-small);
+  }
