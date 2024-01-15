@@ -23,3 +23,18 @@ header {
   padding: 24px;
   background-color: #cbc5ea;
 }
+
+
+  
+  nav ul {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0 24px;
+  }
+  
+  nav ul.submenu {
+    display: none;
+    padding: var(--spacing-small);
+  }
