@@ -37,6 +37,7 @@ header {
   display: flex;
   padding: 24px;
   flex: 2;
+  background-color: #b2d3c2;
 }
 
 .sidebar.content {
@@ -55,9 +56,23 @@ header {
   align-items: center;
   min-height: 100%;
 }
+.sidebar.content {
+  background-color: #D0F0C0;
+}
 
 nav {
   border-bottom: 1px solid grey;
+  background-color: #BEE5BF;
+  font-family: var(--primary-font-family);
+  font-weight: bold;
+  font-size: calc(1.8rem + 1.2vw);
+  color: black;
+}
+
+nav ul li {
+  font-weight: bold;
+  font-size: calc(1.5rem + 1.2vw);
+  color: black;
 }
 
 nav ul {
@@ -85,4 +100,29 @@ footer {
 
 footer a {
   text-decoration: none;
+}
+/*  DAVIDE STYLE*/
+.animal {
+  color: black;
+  font-family: "belgian-zoo";
+  font-weight: bold;
+  text-align: left;
+  font-size: calc(1.5rem + 1.5vw);
+}
+.animal:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  font-weight: lighter;
+}
+.welcome {
+  color: black;
+  font-family: "belgian-zoo";
+  font-weight: bold;
+  text-align: center;
+  font-size: calc(2rem + 1.5vw);
+  padding-top: 48px;
+}
+
+.inactive {
+  display: none;
 }
