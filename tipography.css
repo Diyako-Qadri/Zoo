@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "belgian-zoo";
+    src: url(./tipograpy/regular/belgianzooregular-6y9nv-webfont.woff);
+}
+@font-face {
+    font-family: "belgian-zoo";
+    src: url(./tipograpy/regular/belgianzooregular-6y9nv-webfont.woff2);
+}
+@font-face {
+    font-family: "belgian-zoo";
+    font-weight: lighter;
+    src: url(./tipograpy/lighter/belgianzoolight-514lj-webfont.woff);
+}
+@font-face {
+    font-family: "belgian-zoo";
+    font-weight: lighter;
+    src: url(./tipograpy/lighter/belgianzoolight-514lj-webfont.woff2);
+}
+
+@font-face {
+    font-family: "belgian-zoo";
+    font-weight: bolder;
+    src: url(./tipograpy/outline/belgianzoooutline-z8v0l-webfont.woff);
+}
+@font-face {
+    font-family: "belgian-zoo";
+    font-weight: bolder;
+    src: url(./tipograpy/outline/belgianzoooutline-z8v0l-webfont.woff2);
+}
