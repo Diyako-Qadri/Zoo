@@ -10,7 +10,7 @@ $(() => {
   class AussieReptiles {
     group = "reptile";
 
-    constructor(name, lifespan, food, description, length, weight, location) {
+    constructor(name, lifespan, food, description, length, weight, location, smallimg, bigimg) {
       this.name = name;
       this.lifespan = lifespan;
       this.food = food;
@@ -18,6 +18,8 @@ $(() => {
       this.length = length;
       this.weight = weight;
       this.location = location;
+      this.smallimg = smallimg;
+      this.bigimg = bigimg;
     }
   }
 
@@ -28,7 +30,9 @@ $(() => {
     "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.",
     "90cm",
     "1kg",
-    "Northern Australia"
+    "Northern Australia",
+    "./img/frilled-lizard-small",
+    "./img/frilled-lizard-big"
   );
 
   const blueTongued = new AussieReptiles(
@@ -97,7 +101,7 @@ $(() => {
 
   const renderDetails = (reptile) => {
     $(".displayed-content").empty().toggleClass("active").append(`
-      <img class="animal-img" src="">
+      <img class="animal-img" src="${reptile.smallimg}">
       <h4>${reptile.name}</h4>
       <p class="animal-description">${reptile.description}</p>
       <p class="animal-menu">Favorite food: ${reptile.food}</p>
