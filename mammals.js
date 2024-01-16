@@ -6,7 +6,7 @@ $(() => {
       $('.main.content')
         .append(
           `
-      <img  class="mammals-img" src="./img/mammals.jpg"></img>
+      <img  class="animal-img" src="./img/mammals.jpg"></img>
       `
         )
         .fadeIn(1000);
@@ -102,5 +102,110 @@ $(() => {
        `
       )
       .fadeIn(1000);
+  });
+  function Animal(
+    name,
+    lifespan,
+    group,
+    food,
+    description,
+    length,
+    weight,
+    found
+  ) {
+    (this.name = name),
+      (this.lifespan = lifespan),
+      (this.group = group),
+      (this.food = food),
+      (this.description = description),
+      (this.length = length),
+      (this.weight = weight),
+      (this.found = found);
+  }
+
+  let Wallabies = new Animal(
+    'Wallabies',
+    '9 years',
+    'Mammals',
+    'Herbivore',
+    'The yellow-footed rock wallaby is a marsupial—a pouched mammal—belonging to the same family as the kangaroo. This rock wallaby lives in mountain habitats in isolated portions of Australia. The yellow-footed rock wallaby moves easily around mountaintops, jumping as far as 13 feet (four meters) from rock to rock and even scaling cliffs and climbing trees. In the hot Australian summers, the wallaby is active only at night, while in the winter it can sometimes be seen sunbathing on the rocks.',
+    '12 to 41 inches; tail: 10 to 29 inches',
+    '4 to 53 pounds',
+    'in mountain habitats in isolated portions of Australia.'
+  );
+  let Tasmanian_Devil = new Animal(
+    'Tasmanian Devil',
+    'Up to 5 years',
+    'Mammals',
+    'Carnivore',
+    "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
+    '20 to 31 inches',
+    '9 to 26pounds',
+    'south of Australia.'
+  );
+  let koala = new Animal(
+    'Koala',
+    '20 years',
+    'Mammals',
+    'Herbivore',
+    'The koala is an iconic Australian animal. Often called the koala “bear,” this tree-climbing animal is a marsupial—a mammal with a pouch for the development of offspring.Though koalas look fuzzy, their hair is more like the coarse wool of a sheep. They have two opposing thumbs on their hands, and both their feet and hands have rough pads and claws to grab onto branches. They have two toes, fused together, on their feet, which they use to comb their fur.',
+    '23.5 to 33.5 inches',
+    ' 20 pounds',
+    'the eucalyptus forests of southeastern and eastern Australia'
+  );
+
+  let arrayAnimalObjects = [Wallabies, Tasmanian_Devil, koala];
+
+  arrayAnimalObjects.map(animal =>
+    console.log(
+      `
+        ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
+        
+        
+           `
+    )
+  );
+
+  $('.animal.Wallabies').on('click', () => {
+    $('.main.content')
+      .empty()
+      .append(
+        `
+        <img src="./img/wallabies1.jpg" class="animal-img" alt="">
+        <h3>Name: ${Wallabies.name}</h3>
+        <p>Description: ${Wallabies.description}</p>
+        <p>${Wallabies.food}</p>
+        <p>${Wallabies.food}</p>
+        <p>${Wallabies.group} must insert link!!!</p>
+        `
+      ).hide().fadeIn(500);
+  });
+  $('.animal.Tasmanian.Devil').on('click', () => {
+    $('.main.content')
+      .empty()
+      .append(
+        `
+        <img src="./img/tasmanian-devil-2.jpg" class="animal-img" alt="">
+        <h3>Name ${Tasmanian_Devil.name}</h3>
+        <p>${Tasmanian_Devil.description}</p>
+        <p>${Tasmanian_Devil.food}</p>
+        <p>${Tasmanian_Devil.group} must insert link!!!</p>
+        `
+      ).hide()
+      .fadeIn(500);
+  });
+  $('.animal.Koala').on('click', () => {
+    $('.main.content')
+      .empty()
+      .append(
+        `
+        <img src="./img/koala_02.jpg" class="animal-img" alt="">
+        <h3>Name: ${koala.name}</h3>
+        <p>${koala.description}</p>
+        <p>${koala.food}</p>
+        <p>Group: ${koala.group}</p>
+        `
+      ).hide()
+      .fadeIn(500);
   });
 });
