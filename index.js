@@ -17,6 +17,7 @@ $(() => {
 
     let echidna= new Animal("Echidna",
     "50 years",
+    "mammals",
     "insects such as ants and termites, beetle larvae and worms",
     "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
     "76 cm",
@@ -47,6 +48,20 @@ $(() => {
     )
     console.log(cassowary)
 
+
+    const mapAnimalIterator = animal => {
+        let arrayAnimalObjects= [cassowary, frillNeckedLizard, echidna];
+    
+        arrayAnimalObjects.map(animal=>console.log(
+
+            `
+            ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
+            
+            
+               `
+        ))
+
+    }
     let arrayAnimalObjects= [cassowary, frillNeckedLizard, echidna];
     
     arrayAnimalObjects.map(animal=>console.log(
@@ -54,22 +69,46 @@ $(() => {
         ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
         
         
-        
-        `
+           `
     ))
 
 
 
-    $(".animal").on("click", (event)=>{
+    $(".animal.cassowary").on("click", ()=>{
         $(".welcome").toggleClass("inactive");
-        let animalClicked=$(event.target).attr("data-value");
-        console.log(animalClicked);
-        $(".main.content").append(`
-        <h3>Name ${animalClicked.name}</h3>
-        `)
-        
-        
-
+        //rob wants that once you click again the welcome message comes back
+        $(".main.content").empty().append(`
+        <p>Insert image</p>
+        <h3>Name ${cassowary.name}</h3>
+        <p>${cassowary.description}</p>
+        <p>${cassowary.food}</p>
+        <p>${cassowary.group} must insert link!!!</p>
+        `) 
     })
+    $(".animal.echidna").on("click", ()=>{
+        $(".welcome").toggleClass("inactive");
+        //rob wants that once you click again the welcome message comes back
+        $(".main.content").empty().append(`
+        <p>Insert image</p>
+        <h3>Name ${echidna.name}</h3>
+        <p>${echidna.description}</p>
+        <p>${echidna.food}</p>
+        <p>${echidna.group} must insert link!!!</p>
+        `) 
+    })
+    $(".animal.frillNeckedLizard").on("click", ()=>{
+        $(".welcome").toggleClass("inactive");
+        //rob wants that once you click again the welcome message comes back
+        $(".main.content").empty().append(`
+        <p>Insert image</p>
+        <h3>Name ${frillNeckedLizard.name}</h3>
+        <p>${frillNeckedLizard.description}</p>
+        <p>${frillNeckedLizard.food}</p>
+        <p>${frillNeckedLizard.group} must insert link!!!</p>
+        `) 
+    })
+    
+
+
     
 })
