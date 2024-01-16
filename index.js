@@ -4,14 +4,14 @@ $(() => {
 
     //constructor by Davide
     function Animal(name,lifespan,group,food,description,length,weight,found) {
-        this.name= name,
-        this.lifespan=lifespan,
-        this.group=group,
-        this.food=food,
-        this.description=description,
-        this.length=length,
-        this.weight=weight,
-        this.found=found
+        this.name = name,
+        this.lifespan =lifespan,
+        this.group = group,
+        this.food = food,
+        this.description = description,
+        this.length = length,
+        this.weight = weight,
+        this.found = found
     }
     //creating single animal objects
 
@@ -46,8 +46,20 @@ $(() => {
     "Queensland"
     )
     console.log(cassowary)
-    let arrayAnimalObjects= ["cassowary", "frillNeckedLizard", "echidna"]
-    //continuare slide 13
+
+    let arrayAnimalObjects= [cassowary, frillNeckedLizard, echidna];
+    
+    arrayAnimalObjects.map(animal=>console.log(
+        `
+        ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
+        
+        
+        
+        `
+    ))
+
+
+
     $(".animal").on("click", (event)=>{
         $(".welcome").toggleClass("inactive");
         let animalClicked=$(event.target).attr("data-value");
