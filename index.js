@@ -46,11 +46,15 @@ $(() => {
     "Queensland"
     )
     console.log(cassowary)
-
+    let arrayAnimalObjects= ["cassowary", "frillNeckedLizard", "echidna"]
+    //continuare slide 13
     $(".animal").on("click", (event)=>{
         $(".welcome").toggleClass("inactive");
         let animalClicked=$(event.target).attr("data-value");
         console.log(animalClicked);
+        $(".main.content").append(`
+        <h3>Name ${animalClicked.name}</h3>
+        `)
         
         
 
