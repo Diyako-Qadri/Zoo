@@ -31,8 +31,8 @@ $(() => {
     "90cm",
     "1kg",
     "Northern Australia",
-    "./img/frilled-lizard-small",
-    "./img/frilled-lizard-big"
+    "./img/frilled-lizard-small.jpeg",
+    "./img/frilled-lizard-big.jpeg"
   );
 
   const blueTongued = new AussieReptiles(
@@ -42,7 +42,9 @@ $(() => {
     "The Blue-tongued Skink is known for its distinctive blue tongue, which it uses as a warning signal. When threatened, it may hiss, flatten its body, and display its colorful tongue to deter predators.",
     "50cm",
     "0.5kg",
-    "Eastern Australia"
+    "Eastern Australia",
+    "./img/blue-tongue-small.jpeg",
+    "./img/blue-thong-big.jpeg"
   );
 
   const taipanSnake = new AussieReptiles(
@@ -52,7 +54,9 @@ $(() => {
     "The Taipan is one of the world's most venomous snakes. Despite its potent venom, it is generally shy and prefers to avoid human encounters. It is known for its striking appearance and deadly bite.",
     "200cm",
     "3kg",
-    "Central Australia"
+    "Central Australia",
+    "./img/taipan-snake-small.jpeg",
+    "./img/taipan-snake-big.jpeg"
   );
 
   const frilledDragon = new AussieReptiles(
@@ -62,7 +66,9 @@ $(() => {
     "The Frilled Dragon, similar to the Frill-necked Lizard, has a frill that it displays when threatened. It also has a unique way of moving, using its hind legs and tail to glide from tree to tree in search of prey.",
     "70cm",
     "0.7kg",
-    "Northern Australia"
+    "Northern Australia",
+    "./img/frilled-dragon-small.jpeg",
+    "./img/frilled-dragon-big.jpeg"
   );
 
   const stimsonPython = new AussieReptiles(
@@ -72,7 +78,9 @@ $(() => {
     "Stimson's Python is a non-venomous snake with a calm disposition. It is known for its attractive coloration and is often kept as a pet. It constricts its prey before consuming it.",
     "120cm",
     "2kg",
-    "Southern Australia"
+    "Southern Australia",
+    "./img/stimson-small.jpeg",
+    "./img/stimson-big.jpeg"
   );
 
   const goanna = new AussieReptiles(
@@ -82,7 +90,9 @@ $(() => {
     "The Goanna is a large monitor lizard found across Australia. It is an excellent climber and forager, using its keen sense of smell to locate food. Some species of Goannas can reach impressive sizes.",
     "150cm",
     "5kg",
-    "Various regions in Australia"
+    "Various regions in Australia",
+    "./img/goana-small.jpeg",
+    "./img/goanna-big.jpeg"
   );
 
   const reptiles = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna];
