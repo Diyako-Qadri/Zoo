@@ -48,7 +48,7 @@ $(() => {
     console.log(cassowary)
 
     $(".animal").on("click", (event)=>{
-        $(".welcome").addClass("inactive");
+        $(".welcome").toggleClass("inactive");
         let animalClicked=$(event.target).attr("data-value");
         console.log(animalClicked);
         
