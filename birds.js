@@ -1,8 +1,4 @@
 $(()=> {
-
-
-    console.log("connected")
-
     //constructor by Davide
     function Animal(name,lifespan,group,food,description,length,weight,found) {
         this.name= name,
@@ -15,28 +11,6 @@ $(()=> {
         this.found=found
     }
     //creating single animal objects
-
-    let echidna= new Animal("Echidna",
-    "50 years",
-    "insects such as ants and termites, beetle larvae and worms",
-    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
-    "76 cm",
-    "10 kg",
-    "Throughout Australia"
-    )
-    console.log(echidna);
-
-    let frillNeckedLizard = new Animal("Frill-necked lizard",
-    "20 years",
-    "reptile",
-    "Small insects and spiders",
-    "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.",
-    "90 cm",
-    "1 kg",
-    "Northern Australia"
-    )
-    console.log(frillNeckedLizard);
-
     let cassowary= new Animal("Cassowary",
     "20 years",
     "bird",
@@ -48,11 +22,23 @@ $(()=> {
     )
     console.log(cassowary)
 
-    $(".animal").on("click", ()=>{
-        $(".welcome").addClass("inactive");
-        
-        
+    $('.main.content').empty().append(
+        `
+    <img class="animal-img" src="./img/birds.jpg"></img>
+    `
+      ).hide().fadeIn(500);
 
+    $(".animal.cassowary").on("click", ()=>{
+        $(".welcome").toggleClass("inactive");
+        $(".animal.cassowary").toggleClass("active");
+        //rob wants that once you click again the welcome message comes back
+        $(".main.content").empty().append(`
+        <img class="animal-img" src="./img/Cassowary.jpg"></img>
+        <h3>Name ${cassowary.name}</h3>
+        <p>${cassowary.description}</p>
+        <p>${cassowary.food}</p>
+        <p>${cassowary.group} must insert link!!!</p>
+        `) 
     })
 })
 
