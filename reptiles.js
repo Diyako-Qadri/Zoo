@@ -1,5 +1,11 @@
 $(() => {
-  $(".main.content").append(` <h3> Welcome to the Aussie Reptiles part of the Zoo my dude </h3> `);
+  const displayTitle = () => {
+    $(".main.content").prepend(` <h3> Welcome to the Aussie Reptiles part of the Zoo my dude </h3> `);
+  };
+
+  const removeTitle = () => {
+    $("h3").remove();
+  };
 
   class AussieReptiles {
     group = "reptile";
@@ -86,9 +92,37 @@ $(() => {
     `);
   };
   renderNames();
+  displayTitle();
+
+  /*  This one for HOME PAGE 
+  $(".reptile-animal:first-child").on("click", () => {
+    $(".main.content").empty().addClass("active").append(` 
+
+     <img class="animal-img" src=""> 
+      <h4> ${frillNeckedLizard.name}  </h4> 
+      <p class="animal-description"> ${frillNeckedLizard.description} </p> 
+      <p class="animal-menu"> Fav food:  ${frillNeckedLizard.food} </p> 
+      <p class="animal-link"> <a href="./reptiles.html> This animal belongs to the ${frillNeckedLizard.group} group! </a> </p> 
+     
+    
+      `);
+  }); */
+
+  // THIS one for reptile page
 
   $(".reptile-animal:first-child").on("click", () => {
-    $(".main.content").empty().append(` <h3> ${frillNeckedLizard.name}  </h3> 
+    removeTitle();
+    $(".displayed-content").empty().toggleClass("active").append(` 
+     <img class="animal-img" src=""> 
+      <h4> ${frillNeckedLizard.name}  </h4> 
+      <p class="animal-description"> ${frillNeckedLizard.description} </p> 
+      <p class="animal-menu"> Favorite food:  ${frillNeckedLizard.food} </p> 
+      <p class="animal-lifespan"> This animal can live for ${frillNeckedLizard.lifespan} years </p> 
+       <p class="animal-length "> This animal is usually ${frillNeckedLizard.length} </p> 
+       <p class="animal-weight "> This animal usually weight in ${frillNeckedLizard.weight} </p> 
+      <p class="animal-location"> This animal usually lives in ${frillNeckedLizard.location} </p> 
+      <p class="animal-link"> <a href="./reptiles.html> This animal belongs to the ${frillNeckedLizard.group} group! </a> </p> 
+     
     
       `);
   });
