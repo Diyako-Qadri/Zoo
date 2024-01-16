@@ -78,11 +78,11 @@ $(() => {
         $(".welcome").toggleClass("inactive");
         //rob wants that once you click again the welcome message comes back
         $(".main.content").empty().append(`
-        <p>Insert image</p>
+        <img class="animal-img" src="./img/Cassowary.jpg"></img>
         <h3>Name ${cassowary.name}</h3>
         <p>${cassowary.description}</p>
         <p>${cassowary.food}</p>
-        <p>${cassowary.group} must insert link!!!</p>
+        <p><a href="./birds.html">${cassowary.group}</a></p>
         `) 
     })
     $(".animal.echidna").on("click", ()=>{

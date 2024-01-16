@@ -136,7 +136,8 @@ footer a {
   font-size: calc(2rem + 1.5vw);
   padding-top: 48px;
 }
-
-.inactive {
+.welcome.active {
   display: none;
 }
+
+
