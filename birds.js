@@ -24,9 +24,22 @@ $(()=> {
 
     $('.main.content').empty().append(
         `
-    <img class="mammels-img" src="./img/birds.jpg"></img>
+    <img class="animal-img" src="./img/birds.jpg"></img>
     `
-      ).fadeIn(1000);
+      ).hide().fadeIn(500);
+
+    $(".animal.cassowary").on("click", ()=>{
+        $(".welcome").toggleClass("inactive");
+        $(".animal.cassowary").toggleClass("active");
+        //rob wants that once you click again the welcome message comes back
+        $(".main.content").empty().append(`
+        <img class="animal-img" src="./img/Cassowary.jpg"></img>
+        <h3>Name ${cassowary.name}</h3>
+        <p>${cassowary.description}</p>
+        <p>${cassowary.food}</p>
+        <p>${cassowary.group} must insert link!!!</p>
+        `) 
+    })
 })
 
 
