@@ -1,6 +1,6 @@
 $(() => {
   const displayTitle = () => {
-    $(".main.content").prepend(` <h3> Welcome to the Aussie Reptiles part of the Zoo my dude </h3> `);
+    $(".main.content").prepend(`<h3>Welcome to the Aussie Reptiles part of the Zoo, my dude</h3>`);
   };
 
   const removeTitle = () => {
@@ -81,57 +81,56 @@ $(() => {
     "Various regions in Australia"
   );
 
-  const renderNames = () => {
-    $(".sidebar.content").append(` 
-           <p class="reptile-animal"> ${frillNeckedLizard.name} <p>  
-     <p class="reptile-animal"> ${blueTongued.name} <p> 
-     <p class="reptile-animal"> ${frilledDragon.name} <p> 
-         <p class="reptile-animal"> ${stimsonPython.name} <p> 
-         <p class="reptile-animal"> ${goanna.name} <p> 
-    
+  const reptiles = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna];
+
+  const renderNames = (reptiles) => {
+    $(".sidebar.content").empty();
+
+    reptiles.forEach((reptile, index) => {
+      $(".sidebar.content").append(`
+        <p class="reptile-animal" data-index="${index}">
+          ${reptile.name}
+        </p>
+      `);
+    });
+  };
+
+  const renderDetails = (reptile) => {
+    $(".displayed-content").empty().toggleClass("active").append(`
+      <img class="animal-img" src="">
+      <h4>${reptile.name}</h4>
+      <p class="animal-description">${reptile.description}</p>
+      <p class="animal-menu">Favorite food: ${reptile.food}</p>
+      <p class="animal-lifespan">This animal can live for ${reptile.lifespan} years</p>
+      <p class="animal-length">This animal is usually ${reptile.length}</p>
+      <p class="animal-weight">This animal usually weighs ${reptile.weight}</p>
+      <p class="animal-location">This animal usually lives in ${reptile.location}</p>
+      <p class="animal-link"><a href="./reptiles.html">This animal belongs to the ${reptile.group} group!</a></p>
     `);
   };
-  renderNames();
-  displayTitle();
 
-  /*  This one for HOME PAGE 
-  $(".reptile-animal:first-child").on("click", () => {
-    $(".main.content").empty().addClass("active").append(` 
-
-     <img class="animal-img" src=""> 
-      <h4> ${frillNeckedLizard.name}  </h4> 
-      <p class="animal-description"> ${frillNeckedLizard.description} </p> 
-      <p class="animal-menu"> Fav food:  ${frillNeckedLizard.food} </p> 
-      <p class="animal-link"> <a href="./reptiles.html> This animal belongs to the ${frillNeckedLizard.group} group! </a> </p> 
-     
-    
-      `);
-  }); */
-
-  // THIS one for reptile page
-
-  $(".reptile-animal:first-child").on("click", () => {
+  const handleClick = (index) => {
+    const selectedReptile = reptiles[index];
     removeTitle();
-    $(".displayed-content").empty().toggleClass("active").append(` 
-     <img class="animal-img" src=""> 
-      <h4> ${frillNeckedLizard.name}  </h4> 
-      <p class="animal-description"> ${frillNeckedLizard.description} </p> 
-      <p class="animal-menu"> Favorite food:  ${frillNeckedLizard.food} </p> 
-      <p class="animal-lifespan"> This animal can live for ${frillNeckedLizard.lifespan} years </p> 
-       <p class="animal-length "> This animal is usually ${frillNeckedLizard.length} </p> 
-       <p class="animal-weight "> This animal usually weight in ${frillNeckedLizard.weight} </p> 
-      <p class="animal-location"> This animal usually lives in ${frillNeckedLizard.location} </p> 
-      <p class="animal-link"> <a href="./reptiles.html> This animal belongs to the ${frillNeckedLizard.group} group! </a> </p> 
-    
-    
-      `);
+    renderDetails(selectedReptile);
     setTimeout(() => {
       if ($(".main.content h3").length) {
         removeTitle();
       } else {
         removeTitle();
-        $(".main.content").prepend("<h3> Welcome back to the Aussie Reptiles part of the Zoo my dude </h3>");
+        $(".main.content").prepend("<h3>Welcome back to the Aussie Reptiles part of the Zoo, my dude</h3>");
       }
     }, 250);
-  });
+  };
+
+  const registerClick = () => {
+    $(".sidebar.content .reptile-animal").on("click", function () {
+      const index = $(this).data("index");
+      handleClick(index);
+    });
+  };
+
+  renderNames(reptiles);
+  displayTitle();
+  registerClick();
 });
