@@ -48,34 +48,8 @@ $(() => {
     )
     console.log(cassowary)
 
-
-    const mapAnimalIterator = animal => {
-        let arrayAnimalObjects= [cassowary, frillNeckedLizard, echidna];
-    
-        arrayAnimalObjects.map(animal=>console.log(
-
-            `
-            ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
-            
-            
-               `
-        ))
-
-    }
-    let arrayAnimalObjects= [cassowary, frillNeckedLizard, echidna];
-    
-    arrayAnimalObjects.map(animal=>console.log(
-        `
-        ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
-        
-        
-           `
-    ))
-
-
-
     $(".animal.cassowary").on("click", ()=>{
-        $(".welcome").toggleClass("inactive");
+        $(".welcome").toggleClass("active");
         //rob wants that once you click again the welcome message comes back
         $(".main.content").empty().append(`
         <img class="animal-img" src="./img/Cassowary.jpg"></img>
