@@ -1,5 +1,5 @@
 $(() => {
-  $(".main.content").append(` <h3> Welcome to the Australian Zoo my dude </h3> `);
+  $(".main.content").append(` <h3> Welcome to the Aussie Reptiles part of the Zoo my dude </h3> `);
 
   class AussieReptiles {
     group = "reptile";
@@ -86,4 +86,10 @@ $(() => {
     `);
   };
   renderNames();
+
+  $(".reptile-animal:first-child").on("click", () => {
+    $(".main.content").empty().append(` <h3> ${frillNeckedLizard.name}  </h3> 
+    
+      `);
+  });
 });
