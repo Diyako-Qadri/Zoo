@@ -2,3 +2,11 @@ h3 {
   font-size: 2rem;
   font-family: "belgian-zoo";
 }
+
+.reptile-animal {
+  font-size: 1.7rem;
+  font-family: "belgian-zoo";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
