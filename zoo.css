@@ -2,6 +2,11 @@
   --primary-background-color: #3c9700;
   --primary-font-family: 'belgian-zoo', 'Segoe UI', Tahoma, Geneva, Verdana,
     sans-serif;
+  --primary-gradient-background: linear-gradient(
+        0deg,
+        rgb(95, 199, 60) 0%,
+        rgba(253, 239, 45, 1) 100%
+      );
 }
 
 * {
@@ -23,20 +28,20 @@ body {
   height: 100%;
   margin: 0;
   display: flex;
-
   flex-direction: column;
 }
 
 header {
   text-align: center;
-  background-color: #3c9700;
+  background:var(--primary-gradient-background);
   padding: 32px;
 }
 
 .main.content {
   display: flex;
-  padding: 24px;
   flex: 2;
+  flex-direction: column;
+  text-align: center;
 }
 
 .sidebar.content {
@@ -58,6 +63,7 @@ header {
 
 nav {
   border-bottom: 1px solid grey;
+  background-color:  rgb(238, 242, 0);
 }
 
 nav ul {
@@ -65,17 +71,37 @@ nav ul {
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
-  font-size: 1.3rem;
+  font-family: var(--primary-font-family);
+  font-size: 1.4rem;
   padding: 0 24px;
 }
-
-nav ul.submenu {
-  display: none;
-  padding: var(--spacing-small);
+.main.content h2 {
+  font-family: var(--primary-font-family);
+  font-size: 5rem;
+  margin: 0;
+  transform: translate(0, 10%);
+}
+.mammals-content {
+  background-color: rgb(238, 243, 230);
+  color: #000000;
+  font-family:fantasy;
+  width: 100%;
+  height: 300px;
+  border-top: 4px solid var(--primary-background-color);
+  overflow: auto;
+  margin: 0;
+  align-self: center;
+  transform: translate(0, 16%);
+}
+.mammals-img {
+    height: 300px;
+    width: 450px;
+    margin: 0;
+    align-self: center;
 }
 
 footer {
-  background-color: #3c9700;
+  background: var(--primary-gradient-background);
   text-decoration: none;
   border-top: 1px solid #dee2e6;
   color: #010101;
