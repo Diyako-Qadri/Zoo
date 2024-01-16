@@ -134,7 +134,7 @@ $(() => {
     'in mountain habitats in isolated portions of Australia.'
   );
   let Tasmanian_Devil = new Animal(
-    'Tasmanian Devil',
+    'Tasmanian-Devil',
     'Up to 5 years',
     'Mammals',
     'Carnivore',
@@ -166,46 +166,35 @@ $(() => {
     )
   );
 
-  $('.animal.Wallabies').on('click', () => {
+  const showAnimalInfo = animal => {
     $('.main.content')
       .empty()
       .append(
         `
-        <img src="./img/wallabies1.jpg" class="animal-img" alt="">
-        <h3>Name: ${Wallabies.name}</h3>
-        <p>Description: ${Wallabies.description}</p>
-        <p>${Wallabies.food}</p>
-        <p>${Wallabies.food}</p>
-        <p>${Wallabies.group} must insert link!!!</p>
+        <img src="./img/${animal.name}.jpg" class="animal-img" alt="">
+           <h3>Name: ${animal.name}</h3>
+           <p>Average life span: ${animal.lifespan}</p>
+           <p>Type: ${animal.group}</p>
+           <p>Diet: ${animal.food}</p>
+           <p>Description: ${animal.description}</p>
+           <p>Size: ${animal.length}</p>
+           <p>Weight: ${animal.weight}</p>
+           <p>Found: ${animal.found}</p>
         `
-      ).hide().fadeIn(500);
-  });
-  $('.animal.Tasmanian.Devil').on('click', () => {
-    $('.main.content')
-      .empty()
-      .append(
-        `
-        <img src="./img/tasmanian-devil-2.jpg" class="animal-img" alt="">
-        <h3>Name ${Tasmanian_Devil.name}</h3>
-        <p>${Tasmanian_Devil.description}</p>
-        <p>${Tasmanian_Devil.food}</p>
-        <p>${Tasmanian_Devil.group} must insert link!!!</p>
-        `
-      ).hide()
+      )
+      .hide()
       .fadeIn(500);
-  });
-  $('.animal.Koala').on('click', () => {
-    $('.main.content')
-      .empty()
-      .append(
-        `
-        <img src="./img/koala_02.jpg" class="animal-img" alt="">
-        <h3>Name: ${koala.name}</h3>
-        <p>${koala.description}</p>
-        <p>${koala.food}</p>
-        <p>Group: ${koala.group}</p>
-        `
-      ).hide()
-      .fadeIn(500);
-  });
+  };
+  // Funktion för att återställa välkomstmeddelandet
+
+  // Hantera klick på animal
+  const handleAnimalClick = animal => showAnimalInfo(animal);
+  // Uppdatera den aktuella animalen
+
+  // Koppla klickhändelser för varje animal
+  $('.animal.Wallabies').on('click', () => handleAnimalClick(Wallabies));
+  $('.animal.Tasmanian.Devil').on('click', () =>
+    handleAnimalClick(Tasmanian_Devil)
+  );
+  $('.animal.Koala').on('click', () => handleAnimalClick(koala));
 });
