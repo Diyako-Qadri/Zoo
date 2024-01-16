@@ -15,3 +15,11 @@ h4 {
   justify-content: center;
   align-items: center;
 }
+
+.displayed-content {
+  display: none;
+}
+
+.displayed-content.active {
+  display: block;
+}

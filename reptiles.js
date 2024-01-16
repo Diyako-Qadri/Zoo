@@ -4,7 +4,7 @@ $(() => {
   };
 
   const removeTitle = () => {
-    $("h3").remove();
+    $(".main.content h3").remove();
   };
 
   class AussieReptiles {
@@ -122,8 +122,16 @@ $(() => {
        <p class="animal-weight "> This animal usually weight in ${frillNeckedLizard.weight} </p> 
       <p class="animal-location"> This animal usually lives in ${frillNeckedLizard.location} </p> 
       <p class="animal-link"> <a href="./reptiles.html> This animal belongs to the ${frillNeckedLizard.group} group! </a> </p> 
-     
+    
     
       `);
+    setTimeout(() => {
+      if ($(".main.content h3").length) {
+        removeTitle();
+      } else {
+        removeTitle();
+        $(".main.content").prepend("<h3> Welcome back to the Aussie Reptiles part of the Zoo my dude </h3>");
+      }
+    }, 250);
   });
 });
