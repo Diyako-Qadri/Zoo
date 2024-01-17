@@ -6,6 +6,7 @@ h3 {
 h4 {
   font-size: 1.6rem;
   font-family: "belgian-zoo";
+  color: #255604;
 }
 
 .reptile-animal {
@@ -23,4 +24,27 @@ h4 {
 
 .displayed-content.active {
   display: block;
+}
+
+.animal {
+  display: flex;
+  justify-content: center;
+}
+
+.animal-p {
+  font-family: "belgian-zoo";
+  font-size: 1.2rem;
+  color: #255604;
+}
+
+.welcome {
+  color: #255604;
+}
+
+.main-content {
+  padding: 24px;
+}
+
+.animal-img {
+  padding: 24px;
 }

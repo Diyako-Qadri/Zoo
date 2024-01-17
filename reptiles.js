@@ -1,16 +1,10 @@
 $(() => {
-  const displayTitle = () => {
-    $(".main.content").prepend(`<h3>Welcome to the Aussie Reptiles part of the Zoo, my dude</h3>`);
-  };
+  console.log("connected");
+  let currentAnimal = null;
 
-  const removeTitle = () => {
-    $(".main.content h3").remove();
-  };
-
-  class AussieReptiles {
-    group = "reptile";
-
-    constructor(name, lifespan, food, description, length, weight, location, smallimg, bigimg) {
+  //constructor by Edwin
+  class Animal {
+    constructor(name, lifespan, food, description, length, weight, location, smallimg, bigimg, group) {
       this.name = name;
       this.lifespan = lifespan;
       this.food = food;
@@ -20,10 +14,10 @@ $(() => {
       this.location = location;
       this.smallimg = smallimg;
       this.bigimg = bigimg;
+      this.group = group;
     }
   }
-
-  const frillNeckedLizard = new AussieReptiles(
+  const frillNeckedLizard = new Animal(
     "Frill-Necked Lizard",
     "20 years",
     "Small insects and spiders",
@@ -32,10 +26,11 @@ $(() => {
     "1kg",
     "Northern Australia",
     "./img/frilled-lizard-small.jpeg",
-    "./img/frilled-lizard-big.jpeg"
+    "./img/frilled-lizard-big.jpeg",
+    "reptile"
   );
 
-  const blueTongued = new AussieReptiles(
+  const blueTongued = new Animal(
     "Blue-tongued Skink",
     "15 years",
     "Insects, fruits, and small vertebrates",
@@ -44,10 +39,11 @@ $(() => {
     "0.5kg",
     "Eastern Australia",
     "./img/blue-tongue-small.jpeg",
-    "./img/blue-thong-big.jpeg"
+    "./img/blue-thong-big.jpeg",
+    "reptile"
   );
 
-  const taipanSnake = new AussieReptiles(
+  const taipanSnake = new Animal(
     "Taipan Snake",
     "15 years",
     "Small mammals and birds",
@@ -56,10 +52,11 @@ $(() => {
     "3kg",
     "Central Australia",
     "./img/taipan-snake-small.jpeg",
-    "./img/taipan-snake-big.jpeg"
+    "./img/taipan-snake-big.jpeg",
+    "reptile"
   );
 
-  const frilledDragon = new AussieReptiles(
+  const frilledDragon = new Animal(
     "Frilled Dragon",
     "15 years",
     "Insects and small vertebrates",
@@ -68,10 +65,11 @@ $(() => {
     "0.7kg",
     "Northern Australia",
     "./img/frilled-dragon-small.jpeg",
-    "./img/frilled-dragon-big.jpeg"
+    "./img/frilled-dragon-big.jpeg",
+    "reptile"
   );
 
-  const stimsonPython = new AussieReptiles(
+  const stimsonPython = new Animal(
     "Stimson's Python",
     "20 years",
     "Small mammals and birds",
@@ -80,10 +78,11 @@ $(() => {
     "2kg",
     "Southern Australia",
     "./img/stimson-small.jpeg",
-    "./img/stimson-big.jpeg"
+    "./img/stimson-big.jpeg",
+    "reptile"
   );
 
-  const goanna = new AussieReptiles(
+  const goanna = new Animal(
     "Goanna",
     "25 years",
     "Birds, eggs, and small mammals",
@@ -92,59 +91,64 @@ $(() => {
     "5kg",
     "Various regions in Australia",
     "./img/goana-small.jpeg",
-    "./img/goanna-big.jpeg"
+    "./img/goanna-big.jpeg",
+    "reptile"
   );
 
-  const reptiles = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna];
+  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna];
 
-  const renderNames = (reptiles) => {
+  const showAnimalInfo = (animal) => {
+    $(".welcome").addClass("inactive");
+    $(".main.content")
+      .empty()
+      .append(
+        `
+        <img class="animal-img" src="${animal.smallimg}">
+      <h4>${animal.name}</h4>
+      <p class="animal-p description">${animal.description}</p>
+      <p class="animal-p menu">Favorite food: ${animal.food}</p>
+      <p class="animal-p lifespan">This animal can live for ${animal.lifespan} years</p>
+      <p class="animal-p length">This animal is usually ${animal.length}</p>
+      <p class="animal-p weight">This animal usually weighs ${animal.weight}</p>
+      <p class="animal-p location">This animal usually lives in ${animal.location}</p>
+      <p class="animal-p link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
+    `
+      )
+      .hide()
+      .fadeIn(500);
+  };
+
+  const resetWelcome = () => {
+    $(".main.content").empty().append(`<p class="welcome">Welcome to the Reptile Hood my dude!</p>`);
+    currentAnimal = null;
+  };
+
+  const handleAnimalClick = (animal) => {
+    if (currentAnimal === animal) {
+      resetWelcome();
+    } else {
+      showAnimalInfo(animal);
+      currentAnimal = animal;
+    }
+  };
+
+  const registerClick = (index) => {
+    $(`.sidebar.content .animal.${index}`).on("click", () => handleAnimalClick(arrayOfAnimals[index]));
+  };
+
+  const renderNames = (animal) => {
     $(".sidebar.content").empty();
 
-    reptiles.forEach((reptile, index) => {
+    animal.forEach((animal, index) => {
       $(".sidebar.content").append(`
-        <p class="reptile-animal" data-index="${index}">
-          ${reptile.name}
-        </p>
-      `);
-    });
-  };
-
-  const renderDetails = (reptile) => {
-    $(".displayed-content").empty().toggleClass("active").append(`
-      <img class="animal-img" src="${reptile.smallimg}">
-      <h4>${reptile.name}</h4>
-      <p class="animal-description">${reptile.description}</p>
-      <p class="animal-menu">Favorite food: ${reptile.food}</p>
-      <p class="animal-lifespan">This animal can live for ${reptile.lifespan} years</p>
-      <p class="animal-length">This animal is usually ${reptile.length}</p>
-      <p class="animal-weight">This animal usually weighs ${reptile.weight}</p>
-      <p class="animal-location">This animal usually lives in ${reptile.location}</p>
-      <p class="animal-link"><a href="./reptiles.html">This animal belongs to the ${reptile.group} group!</a></p>
+      <p class="animal ${index}">
+        ${animal.name}
+      </p>
     `);
-  };
 
-  const handleClick = (index) => {
-    const selectedReptile = reptiles[index];
-    removeTitle();
-    renderDetails(selectedReptile);
-    setTimeout(() => {
-      if ($(".main.content h3").length) {
-        removeTitle();
-      } else {
-        removeTitle();
-        $(".main.content").prepend("<h3>Welcome back to the Aussie Reptiles part of the Zoo, my dude</h3>");
-      }
-    }, 250);
-  };
-
-  const registerClick = () => {
-    $(".sidebar.content .reptile-animal").on("click", function () {
-      const index = $(this).data("index");
-      handleClick(index);
+      registerClick(index);
     });
   };
-
-  renderNames(reptiles);
-  displayTitle();
-  registerClick();
+  renderNames(arrayOfAnimals);
+  resetWelcome();
 });
