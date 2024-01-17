@@ -97,8 +97,6 @@ $(() => {
       console.log(
         `
             ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
-            
-            
                `
       )
     );
@@ -109,8 +107,6 @@ $(() => {
     console.log(
       `
         ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
-        
-        
            `
     )
   );

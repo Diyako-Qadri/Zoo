@@ -1,25 +1,24 @@
 $(() => {
   //Diyako
 
-  $('.mammals').on('click', () => {
-    $('.main.content').empty(),
-      $('.main.content')
-        .append(
-          `
+  $('.main.content').empty(),
+    $('.main.content')
+      .append(
+        `
       <img  class="animal-img" src="./img/mammals.jpg"></img>
       `
-        )
-        .fadeIn(1000);
-    $('.main.content')
-      .append(
-        `
+      )
+      .fadeIn(1000);
+  $('.main.content')
+    .append(
+      `
       <h2> Mammals </h2>
       `
-      )
-      .toggle();
-    $('.main.content')
-      .append(
-        `
+    )
+    .toggle();
+  $('.main.content')
+    .append(
+      `
       <div class="mammals-content"> 
       <h3>Fun fact about mammals: </p>
      
@@ -100,77 +99,77 @@ $(() => {
        </div>
        
        `
-      )
-      .fadeIn(1000);
-  });
-  function Animal(
-    name,
-    lifespan,
-    group,
-    food,
-    description,
-    length,
-    weight,
-    found
-  ) {
-    (this.name = name),
-      (this.lifespan = lifespan),
-      (this.group = group),
-      (this.food = food),
-      (this.description = description),
-      (this.length = length),
-      (this.weight = weight),
-      (this.found = found);
-  }
+    )
+    .fadeIn(1000);
+});
+function Animal(
+  name,
+  lifespan,
+  group,
+  food,
+  description,
+  length,
+  weight,
+  found
+) {
+  (this.name = name),
+    (this.lifespan = lifespan),
+    (this.group = group),
+    (this.food = food),
+    (this.description = description),
+    (this.length = length),
+    (this.weight = weight),
+    (this.found = found);
+}
 
-  let Wallabies = new Animal(
-    'Wallabies',
-    '9 years',
-    'Mammals',
-    'Herbivore',
-    'The yellow-footed rock wallaby is a marsupial—a pouched mammal—belonging to the same family as the kangaroo. This rock wallaby lives in mountain habitats in isolated portions of Australia. The yellow-footed rock wallaby moves easily around mountaintops, jumping as far as 13 feet (four meters) from rock to rock and even scaling cliffs and climbing trees. In the hot Australian summers, the wallaby is active only at night, while in the winter it can sometimes be seen sunbathing on the rocks.',
-    '12 to 41 inches; tail: 10 to 29 inches',
-    '4 to 53 pounds',
-    'in mountain habitats in isolated portions of Australia.'
-  );
-  let Tasmanian_Devil = new Animal(
-    'Tasmanian-Devil',
-    'Up to 5 years',
-    'Mammals',
-    'Carnivore',
-    "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
-    '20 to 31 inches',
-    '9 to 26pounds',
-    'south of Australia.'
-  );
-  let koala = new Animal(
-    'Koala',
-    '20 years',
-    'Mammals',
-    'Herbivore',
-    'The koala is an iconic Australian animal. Often called the koala “bear,” this tree-climbing animal is a marsupial—a mammal with a pouch for the development of offspring.Though koalas look fuzzy, their hair is more like the coarse wool of a sheep. They have two opposing thumbs on their hands, and both their feet and hands have rough pads and claws to grab onto branches. They have two toes, fused together, on their feet, which they use to comb their fur.',
-    '23.5 to 33.5 inches',
-    ' 20 pounds',
-    'the eucalyptus forests of southeastern and eastern Australia'
-  );
+let Wallabies = new Animal(
+  'Wallabies',
+  '9 years',
+  'Mammals',
+  'Herbivore',
+  'The yellow-footed rock wallaby is a marsupial—a pouched mammal—belonging to the same family as the kangaroo. This rock wallaby lives in mountain habitats in isolated portions of Australia. The yellow-footed rock wallaby moves easily around mountaintops, jumping as far as 13 feet (four meters) from rock to rock and even scaling cliffs and climbing trees. In the hot Australian summers, the wallaby is active only at night, while in the winter it can sometimes be seen sunbathing on the rocks.',
+  '12 to 41 inches; tail: 10 to 29 inches',
+  '4 to 53 pounds',
+  'in mountain habitats in isolated portions of Australia.'
+);
+let Tasmanian_Devil = new Animal(
+  'Tasmanian-Devil',
+  'Up to 5 years',
+  'Mammals',
+  'Carnivore',
+  "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
+  '20 to 31 inches',
+  '9 to 26pounds',
+  'south of Australia.'
+);
+let koala = new Animal(
+  'Koala',
+  '20 years',
+  'Mammals',
+  'Herbivore',
+  'The koala is an iconic Australian animal. Often called the koala “bear,” this tree-climbing animal is a marsupial—a mammal with a pouch for the development of offspring.Though koalas look fuzzy, their hair is more like the coarse wool of a sheep. They have two opposing thumbs on their hands, and both their feet and hands have rough pads and claws to grab onto branches. They have two toes, fused together, on their feet, which they use to comb their fur.',
+  '23.5 to 33.5 inches',
+  ' 20 pounds',
+  'the eucalyptus forests of southeastern and eastern Australia'
+);
 
-  let arrayAnimalObjects = [Wallabies, Tasmanian_Devil, koala];
+let arrayAnimalObjects = [Wallabies, Tasmanian_Devil, koala];
 
-  arrayAnimalObjects.map(animal =>
-    console.log(
-      `
+arrayAnimalObjects.map(animal =>
+  console.log(
+    `
         ${animal.name} lives ${animal.lifespan} and is present in ${animal.found}
         
         
            `
-    )
-  );
+  )
+);
 
-  const showAnimalInfo = animal => {
-    $('.main.content')
-      .empty()
-      .append(
-        `
+const showAnimalInfo = animal => {
+  $('.main.content')
+    .empty()
+    .append(
+      `
         <img src="./img/${animal.name}.jpg" class="animal-img" alt="">
            <h3>Name: ${animal.name}</h3>
            <p>Average life span: ${animal.lifespan}</p>
@@ -181,20 +180,19 @@ $(() => {
            <p>Weight: ${animal.weight}</p>
            <p>Found: ${animal.found}</p>
         `
-      )
-      .hide()
-      .fadeIn(500);
-  };
-  // Funktion för att återställa välkomstmeddelandet
+    )
+    .hide()
+    .fadeIn(500);
+};
+// Funktion för att återställa välkomstmeddelandet
 
-  // Hantera klick på animal
-  const handleAnimalClick = animal => showAnimalInfo(animal);
-  // Uppdatera den aktuella animalen
+// Hantera klick på animal
+const handleAnimalClick = animal => showAnimalInfo(animal);
+// Uppdatera den aktuella animalen
 
-  // Koppla klickhändelser för varje animal
-  $('.animal.Wallabies').on('click', () => handleAnimalClick(Wallabies));
-  $('.animal.Tasmanian.Devil').on('click', () =>
-    handleAnimalClick(Tasmanian_Devil)
-  );
-  $('.animal.Koala').on('click', () => handleAnimalClick(koala));
-});
+// Koppla klickhändelser för varje animal
+$('.animal.Wallabies').on('click', () => handleAnimalClick(Wallabies));
+$('.animal.Tasmanian.Devil').on('click', () =>
+  handleAnimalClick(Tasmanian_Devil)
+);
+$('.animal.Koala').on('click', () => handleAnimalClick(koala));
