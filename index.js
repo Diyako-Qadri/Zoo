@@ -188,7 +188,7 @@ $(() => {
   };
 
   const registerClick = (index) => {
-    $(`.sidebar.content .animal-${index}`).on("click", () => handleAnimalClick(arrayOfAnimals[index]));
+    $(`.sidebar.content .animal.${index}`).on("click", () => handleAnimalClick(arrayOfAnimals[index]));
   };
 
   const renderNames = (animal) => {
@@ -196,7 +196,7 @@ $(() => {
 
     animal.forEach((animal, index) => {
       $(".sidebar.content").append(`
-      <p class="animal-${index}">
+      <p class="animal ${index}">
         ${animal.name}
       </p>
     `);
