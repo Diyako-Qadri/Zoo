@@ -3,10 +3,24 @@ h3 {
   font-family: "belgian-zoo";
 }
 
+h4 {
+  font-size: 1.6rem;
+  font-family: "belgian-zoo";
+}
+
 .reptile-animal {
+  cursor: pointer;
   font-size: 1.7rem;
   font-family: "belgian-zoo";
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.displayed-content {
+  display: none;
+}
+
+.displayed-content.active {
+  display: block;
 }
