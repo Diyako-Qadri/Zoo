@@ -2,7 +2,7 @@ $(() => {
   console.log('connected');
   let currentAnimal = null;
 
-  //constructor by Davide
+ 
   function Animal(
     name,
     lifespan,
@@ -127,29 +127,28 @@ $(() => {
       .hide()
       .fadeIn(500);
   };
-  // Funktion för att återställa välkomstmeddelandet
+  
   const resetWelcome = () => {
     $('.main.content')
       .empty()
       .append(
         `<p class="welcome">Welcome to Changemaker´s Australian Animal Portal!</p>`
       );
-    currentAnimal = null; // Återställ den aktuella animalen
+    currentAnimal = null; 
   };
 
-  // Hantera klick på animal
+ 
   const handleAnimalClick = animal => {
     if (currentAnimal === animal) {
-      // Klick på samma animal igen, återställ welcome
+      
       resetWelcome();
     } else {
-      // Klick på en ny animal, visa information om den
+      
       showAnimalInfo(animal);
-      currentAnimal = animal; // Uppdatera den aktuella animalen
+      currentAnimal = animal; 
     }
   };
 
-  // Koppla klickhändelser för varje animal
   $('.animal.Wallabies').on('click', () => handleAnimalClick(Wallabies));
   $('.animal.Tasmanian.Devil').on('click', () =>
     handleAnimalClick(Tasmanian_Devil)
@@ -160,4 +159,13 @@ $(() => {
   $('.animal.frillNeckedLizard').on('click', () =>
     handleAnimalClick(frillNeckedLizard)
   );
+
+  $(".food").on({
+    mouseenter: function () {
+      $(this).siblings().fadeTo(0, 0.3);
+    },
+    mouseleave: function () {
+      $(this).siblings().fadeTo(0, 1);
+    },
+  });
 });
