@@ -1,5 +1,6 @@
 $(() => {
   console.log("connected");
+
   let currentAnimal = null;
 
   //constructor by Edwin
