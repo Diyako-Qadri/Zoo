@@ -157,19 +157,19 @@ $(() => {
         `
         <img class="animal-img" src="${animal.smallimg}">
       <h4>${animal.name}</h4>
-      <p class="animal-description">${animal.description}</p>
-      <p class="animal-menu">Favorite food: ${animal.food}</p>
-      <p class="animal-lifespan">This animal can live for ${animal.lifespan} years</p>
-      <p class="animal-length">This animal is usually ${animal.length}</p>
-      <p class="animal-weight">This animal usually weighs ${animal.weight}</p>
-      <p class="animal-location">This animal usually lives in ${animal.location}</p>
-      <p class="animal-link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
+      <p class="animal-p description">${animal.description}</p>
+      <p class="animal-p menu">Favorite food: ${animal.food}</p>
+      <p class="animal-p lifespan">This animal can live for ${animal.lifespan} years</p>
+      <p class="animal-p length">This animal is usually ${animal.length}</p>
+      <p class="animal-p weight">This animal usually weighs ${animal.weight}</p>
+      <p class="animal-p location">This animal usually lives in ${animal.location}</p>
+      <p class="animal-p link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
     `
       )
       .hide()
       .fadeIn(500);
   };
-  
+
   const resetWelcome = () => {
     $(".main.content").empty().append(`<p class="welcome">Welcome to Changemaker´s Australian Animal Portal!</p>`);
     currentAnimal = null; // Återställ den aktuella animalen
@@ -178,12 +178,10 @@ $(() => {
   // Hantera klick på animal
   const handleAnimalClick = (animal) => {
     if (currentAnimal === animal) {
-      
       resetWelcome();
     } else {
-      
       showAnimalInfo(animal);
-      currentAnimal = animal; 
+      currentAnimal = animal;
     }
   };
 

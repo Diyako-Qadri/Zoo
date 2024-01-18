@@ -120,7 +120,10 @@ footer a {
   font-family: "belgian-zoo";
   font-weight: bold;
   text-align: left;
-  font-size: calc(1.5rem + 1.5vw);
+  font-size: calc(1.3rem + 1.3vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .animal:hover {
   transform: scale(1.1);
@@ -147,4 +150,16 @@ footer a {
   margin: 2px;
   font-family: var(--primary-font-family);
   font-size: 1.5rem;
+}
+
+.animal-p {
+  font-family: "belgian-zoo";
+  font-size: 1.2rem;
+  color: #255604;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-family: "belgian-zoo";
+  color: #255604;
 }
