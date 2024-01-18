@@ -163,3 +163,16 @@ h4 {
   font-family: "belgian-zoo";
   color: #255604;
 }
+
+@media only screen and (max-width: 767px) {
+  .animal {
+    color: black;
+    font-family: "belgian-zoo";
+    font-weight: bold;
+    text-align: left;
+    font-size: calc(1rem + 1vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
