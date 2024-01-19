@@ -6,19 +6,9 @@ $(() => {
       .append(
         `
       <img  class="animal-img" src="./img/mammals.jpg"></img>
-      `
-      )
-      .fadeIn(1000);
-  $('.main.content')
-    .append(
-      `
+      
       <h2> Mammals </h2>
-      `
-    )
-    .toggle();
-  $('.main.content')
-    .append(
-      `
+   
       <div class="mammals-content"> 
       <h3>Fun fact about mammals: </p>
      
@@ -100,7 +90,7 @@ $(() => {
        
        `
     )
-    .fadeIn(1000);
+    .hide().fadeIn(1000);
     
     
 
