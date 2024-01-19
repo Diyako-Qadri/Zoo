@@ -96,18 +96,6 @@ $(() => {
     "reptile"
   );
 
-  const echidna = new Animal(
-    "Echidna",
-    "50 years",
-    "mammals",
-    "insects such as ants and termites, beetle larvae and worms",
-    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
-    "76 cm",
-    "10 kg",
-    "./img/Echidna.jpg",
-    "./img/Echidna.jpg",
-    "mammals"
-  );
 
   const cassowary = new Animal(
     "Cassowary",
@@ -121,44 +109,57 @@ $(() => {
     "./img/Cassowary.jpg",
     "bird"
   );
+
+  const echidna = new Animal(
+    "Echidna",
+    "50 years",
+    "mammals",
+    "insects such as ants and termites, beetle larvae and worms",
+    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
+    "76 cm",
+    "10 kg",
+    "./img/Echidna.jpg",
+    "./img/Echidna.jpg",
+    "mammals"
+  );
   const wallabies = new Animal(
     "Wallabies",
     "9 years",
-    "Mammals",
     "Herbivore",
     "The yellow-footed rock wallaby is a marsupial—a pouched mammal—belonging to the same family as the kangaroo. This rock wallaby lives in mountain habitats in isolated portions of Australia. The yellow-footed rock wallaby moves easily around mountaintops, jumping as far as 13 feet (four meters) from rock to rock and even scaling cliffs and climbing trees. In the hot Australian summers, the wallaby is active only at night, while in the winter it can sometimes be seen sunbathing on the rocks.",
     "12 to 41 inches; tail: 10 to 29 inches",
     "4 to 53 pounds",
+    "mountain habitats in isolated portions of Australia.",
     "./img/Wallabies.jpg",
     "./img/Wallabies.jpg",
-    "in mountain habitats in isolated portions of Australia."
+    "mammals"
   );
   const tasmanian_Devil = new Animal(
     "Tasmanian-Devil",
     "Up to 5 years",
-    "Mammals",
     "Carnivore",
     "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
     "20 to 31 inches",
     "9 to 26pounds",
+    'south of Australia.',
     "./img/Tasmanian-Devil.jpg",
     "./img/Tasmanian-Devil.jpg",
-    'south of Australia.'
+    "Mammals"
   );
   const koala = new Animal(
     "Koala",
     "20 years",
-    "Mammals",
     "Herbivore",
     "The koala is an iconic Australian animal. Often called the koala “bear,” this tree-climbing animal is a marsupial—a mammal with a pouch for the development of offspring.Though koalas look fuzzy, their hair is more like the coarse wool of a sheep. They have two opposing thumbs on their hands, and both their feet and hands have rough pads and claws to grab onto branches. They have two toes, fused together, on their feet, which they use to comb their fur.",
     "23.5 to 33.5 inches",
     " 20 pounds",
+    "the eucalyptus forests of southeastern and eastern Australia",
     "./img/koala.jpg",
     "./img/koala.jpg",
-    "the eucalyptus forests of southeastern and eastern Australia"
+    "mammals"
   );
 
-  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, echidna, cassowary, wallabies, tasmanian_Devil, koala];
+  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, cassowary, echidna, wallabies, tasmanian_Devil, koala];
 
   const showAnimalInfo = (animal) => {
     $(".welcome").addClass("inactive");
@@ -174,7 +175,7 @@ $(() => {
       <p class="animal-p length">This animal is usually ${animal.length}</p>
       <p class="animal-p weight">This animal usually weighs ${animal.weight}</p>
       <p class="animal-p location">This animal usually lives in ${animal.location}</p>
-      <p class="animal-p link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
+      <p class="animal-p link"><a href="./${animal.group}.html">This animal belongs to the ${animal.group} group!</a></p>
     `
       )
       .hide()
