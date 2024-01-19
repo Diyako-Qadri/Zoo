@@ -1,7 +1,7 @@
 $(() => {
   //Diyako
 
-  $('.main.content').empty(),
+   $('.main.content').empty(),
     $('.main.content')
       .append(
         `
@@ -101,7 +101,9 @@ $(() => {
        `
     )
     .fadeIn(1000);
-});
+    
+    
+
 function Animal(
   name,
   lifespan,
@@ -196,3 +198,6 @@ $('.animal.Tasmanian.Devil').on('click', () =>
   handleAnimalClick(Tasmanian_Devil)
 );
 $('.animal.Koala').on('click', () => handleAnimalClick(koala));
+
+
+});
