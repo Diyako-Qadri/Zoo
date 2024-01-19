@@ -1,5 +1,6 @@
 $(() => {
   console.log("connected");
+
   let currentAnimal = null;
 
   //constructor by Edwin
@@ -103,7 +104,9 @@ $(() => {
     "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
     "76 cm",
     "10 kg",
-    "Throughout Australia"
+    "./img/Echidna.jpg",
+    "./img/Echidna.jpg",
+    "mammals"
   );
 
   const cassowary = new Animal(
@@ -114,7 +117,9 @@ $(() => {
     "It’s not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.   These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida",
     "1.7 m",
     "44 kg",
-    "Queensland"
+    "./img/Cassowary.jpg",
+    "./img/Cassowary.jpg",
+    "bird"
   );
   const wallabies = new Animal(
     "Wallabies",
@@ -134,7 +139,8 @@ $(() => {
     "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
     "20 to 31 inches",
     "9 to 26pounds",
-    "south of Australia."
+    "./img/Tasmanian-Devil.jpg",
+    "./img/Tasmanian-Devil.jpg"
   );
   const koala = new Animal(
     "Koala",
@@ -147,7 +153,7 @@ $(() => {
     "the eucalyptus forests of southeastern and eastern Australia"
   );
 
-  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, echidna, cassowary, cassowary, wallabies, tasmanian_Devil, koala];
+  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, echidna, cassowary, wallabies, tasmanian_Devil, koala];
 
   const showAnimalInfo = (animal) => {
     $(".welcome").addClass("inactive");
@@ -157,19 +163,19 @@ $(() => {
         `
         <img class="animal-img" src="${animal.smallimg}">
       <h4>${animal.name}</h4>
-      <p class="animal-description">${animal.description}</p>
-      <p class="animal-menu">Favorite food: ${animal.food}</p>
-      <p class="animal-lifespan">This animal can live for ${animal.lifespan} years</p>
-      <p class="animal-length">This animal is usually ${animal.length}</p>
-      <p class="animal-weight">This animal usually weighs ${animal.weight}</p>
-      <p class="animal-location">This animal usually lives in ${animal.location}</p>
-      <p class="animal-link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
+      <p class="animal-p description">${animal.description}</p>
+      <p class="animal-p menu">Favorite food: ${animal.food}</p>
+      <p class="animal-p lifespan">This animal can live for ${animal.lifespan} years</p>
+      <p class="animal-p length">This animal is usually ${animal.length}</p>
+      <p class="animal-p weight">This animal usually weighs ${animal.weight}</p>
+      <p class="animal-p location">This animal usually lives in ${animal.location}</p>
+      <p class="animal-p link"><a href="./reptiles.html">This animal belongs to the ${animal.group} group!</a></p>
     `
       )
       .hide()
       .fadeIn(500);
   };
-  
+
   const resetWelcome = () => {
     $(".main.content").empty().append(`<p class="welcome">Welcome to Changemaker´s Australian Animal Portal!</p>`);
     currentAnimal = null; // Återställ den aktuella animalen
@@ -178,12 +184,10 @@ $(() => {
   // Hantera klick på animal
   const handleAnimalClick = (animal) => {
     if (currentAnimal === animal) {
-      
       resetWelcome();
     } else {
-      
       showAnimalInfo(animal);
-      currentAnimal = animal; 
+      currentAnimal = animal;
     }
   };
 
