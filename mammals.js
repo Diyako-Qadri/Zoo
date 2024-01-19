@@ -1,6 +1,7 @@
 $(() => {
   //Diyako
-
+  
+const welcomeMessage = () => {
    $('.main.content').empty(),
     $('.main.content')
       .append(
@@ -91,8 +92,9 @@ $(() => {
        `
     )
     .hide().fadeIn(1000);
+}
     
-    
+    welcomeMessage();
 
 function Animal(
   name,
@@ -188,6 +190,13 @@ $('.animal.Tasmanian.Devil').on('click', () =>
   handleAnimalClick(Tasmanian_Devil)
 );
 $('.animal.Koala').on('click', () => handleAnimalClick(koala));
+
+$('.mammals').on('click', () => welcomeMessage());
+
+
+
+
+
 
 
 });
