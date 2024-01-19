@@ -1,6 +1,172 @@
-h3 {
-  font-size: 2rem;
+:root {
+  --primary-background-color: #3c9700;
+  --primary-font-family: "belgian-zoo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-gradient-background: linear-gradient(0deg, rgb(95, 199, 60) 0%, rgba(253, 239, 45, 1) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-family: var(--primary-font-family);
+  font-size: 5rem;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.displayed-content {
+  display: none;
+}
+
+.displayed-content.active {
+  display: block;
+}
+
+header {
+  text-align: center;
+  background: var(--primary-gradient-background);
+  padding: 32px;
+  max-height: 15%;
+}
+
+.main.content {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  text-align: center;
+  min-height: 70%;
+  max-height: 80%;
+}
+
+.sidebar.content {
+  flex: 1;
+  border-right: 1px solid rgb(49, 47, 47);
+  padding: 24px;
+  max-height: 70%;
+  background-color: #d0f0c0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content {
+  min-height: 100%;
+}
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+nav {
+  border-bottom: 1px solid grey;
+  background-color: rgb(238, 242, 0);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  font-family: var(--primary-font-family);
+  font-size: 1.4rem;
+  padding: 0 24px;
+}
+.main.content h2 {
+  font-family: var(--primary-font-family);
+  font-size: 5rem;
+  margin: 0;
+  transform: translate(0, 10%);
+}
+.mammals-content {
+  background-color: rgb(238, 243, 230);
+  color: #000000;
+  font-family: fantasy;
+  width: 100%;
+  max-height: 350px;
+  border-top: 4px solid var(--primary-background-color);
+  overflow: auto;
+  margin: 0;
+  align-self: center;
+  transform: translate(0, 25%);
+}
+.animal-img {
+  height: 300px;
+  width: 450px;
+  margin: 0;
+  align-self: center;
+}
+
+footer {
+  background: var(--primary-gradient-background);
+  text-decoration: none;
+  border-top: 1px solid #dee2e6;
+  color: #010101;
+  text-align: center;
+  padding: 24px;
+  max-height: 15%;
+}
+
+footer a {
+  text-decoration: none;
+}
+/*  DAVIDE STYLE*/
+.animal {
+  color: black;
   font-family: "belgian-zoo";
+  font-weight: bold;
+  text-align: left;
+  font-size: calc(1.3rem + 1.3vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animal:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  font-weight: lighter;
+}
+.welcome {
+  position: relative;
+  color: black;
+  font-family: "belgian-zoo";
+  font-weight: bold;
+  text-align: center;
+  font-size: calc(2rem + 1.5vw);
+  padding-top: 48px;
+  top: -400px;
+}
+
+.inactive {
+  display: none;
+}
+
+.food {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 2px;
+  font-family: var(--primary-font-family);
+  font-size: 1.5rem;
+}
+
+.animal-p {
+  font-family: "belgian-zoo";
+  font-size: 1.2rem;
+  color: #255604;
 }
 
 h4 {
@@ -18,33 +184,143 @@ h4 {
   align-items: center;
 }
 
-.displayed-content {
-  display: none;
-}
+@media only screen and (max-width: 767px) {
+  .animal {
+    color: black;
+    font-family: "belgian-zoo";
+    font-weight: bold;
+    text-align: left;
+    font-size: calc(0.7rem + 0.7vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.displayed-content.active {
-  display: block;
-}
+  .welcome {
+    font-size: calc(1rem + 1vw);
+  }
 
-.animal {
-  display: flex;
-  justify-content: center;
-}
+  h4 {
+    font-size: 0.9rem;
+    font-family: "belgian-zoo";
+    color: #255604;
+  }
 
-.animal-p {
-  font-family: "belgian-zoo";
-  font-size: 1.2rem;
-  color: #255604;
-}
+  h1 {
+    margin: 0;
+    color: white;
+    font-family: var(--primary-font-family);
+    font-size: 3rem;
+  }
 
-.welcome {
-  color: #255604;
-}
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+  }
 
-.main-content {
-  padding: 24px;
-}
+  header {
+    text-align: center;
+    background: var(--primary-gradient-background);
+    padding: 16px;
+    max-height: 10%;
+  }
 
-.animal-img {
-  padding: 24px;
+  .main.content {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+
+    text-align: center;
+
+    max-height: 80%;
+  }
+
+  .sidebar {
+    width: 30;
+  }
+  .sidebar.content {
+    border-right: 1px solid rgb(49, 47, 47);
+    background-color: #d0f0c0;
+    max-height: 100%;
+  }
+
+  .main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100%;
+  }
+
+  nav {
+    border-bottom: 1px solid grey;
+    background-color: rgb(238, 242, 0);
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    font-family: var(--primary-font-family);
+    font-size: 1.2rem;
+    padding: 0 16px;
+  }
+  .main.content h2 {
+    font-family: var(--primary-font-family);
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .mammals-content {
+    background-color: rgb(238, 243, 230);
+    color: #000000;
+    font-family: fantasy;
+    width: 100%;
+    height: 250px;
+    border-top: 4px solid var(--primary-background-color);
+    overflow: auto;
+    justify-content: end;
+    /* margin-top: 80%; */
+  }
+
+  .animal-img {
+    padding: 15px;
+
+    height: auto;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+  }
+
+  footer {
+    background: var(--primary-gradient-background);
+    text-decoration: none;
+    border-top: 1px solid #dee2e6;
+    color: #010101;
+    text-align: center;
+    padding: 24px;
+  }
+
+  footer a {
+    text-decoration: none;
+  }
+
+  .animal:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    font-weight: lighter;
+  }
+
+  .food {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 2px;
+    font-family: var(--primary-font-family);
+    font-size: 1.5rem;
+  }
 }
