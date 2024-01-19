@@ -152,7 +152,7 @@ $(() => {
     "the eucalyptus forests of southeastern and eastern Australia"
   );
 
-  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, echidna, cassowary, cassowary, wallabies, tasmanian_Devil, koala];
+  let arrayOfAnimals = [frillNeckedLizard, blueTongued, taipanSnake, frilledDragon, stimsonPython, goanna, echidna, cassowary, wallabies, tasmanian_Devil, koala];
 
   const showAnimalInfo = (animal) => {
     $(".welcome").addClass("inactive");
