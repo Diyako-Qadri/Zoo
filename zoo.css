@@ -183,7 +183,7 @@ footer a {
 
 h4 {
   font-size: 1.6rem;
-  font-family: "belgian-zoo";
+  font-family: monospace;
   color: #000000;
 }
 
@@ -214,8 +214,8 @@ h4 {
 
   h4 {
     font-size: 0.9rem;
-    font-family: "belgian-zoo";
-    color: #255604;
+    font-family: monospace;
+    color: #000000;
   }
 
   h1 {
@@ -282,7 +282,7 @@ h4 {
     padding: 0 16px;
   }
   .main.content h2 {
-    font-family: var(--primary-font-family);
+    font-family: monospace;
     font-size: 3rem;
     margin: 0;
   }
