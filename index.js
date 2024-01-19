@@ -129,6 +129,8 @@ $(() => {
     "The yellow-footed rock wallaby is a marsupial—a pouched mammal—belonging to the same family as the kangaroo. This rock wallaby lives in mountain habitats in isolated portions of Australia. The yellow-footed rock wallaby moves easily around mountaintops, jumping as far as 13 feet (four meters) from rock to rock and even scaling cliffs and climbing trees. In the hot Australian summers, the wallaby is active only at night, while in the winter it can sometimes be seen sunbathing on the rocks.",
     "12 to 41 inches; tail: 10 to 29 inches",
     "4 to 53 pounds",
+    "./img/Wallabies.jpg",
+    "./img/Wallabies.jpg",
     "in mountain habitats in isolated portions of Australia."
   );
   const tasmanian_Devil = new Animal(
@@ -140,7 +142,8 @@ $(() => {
     "20 to 31 inches",
     "9 to 26pounds",
     "./img/Tasmanian-Devil.jpg",
-    "./img/Tasmanian-Devil.jpg"
+    "./img/Tasmanian-Devil.jpg",
+    'south of Australia.'
   );
   const koala = new Animal(
     "Koala",
@@ -150,6 +153,8 @@ $(() => {
     "The koala is an iconic Australian animal. Often called the koala “bear,” this tree-climbing animal is a marsupial—a mammal with a pouch for the development of offspring.Though koalas look fuzzy, their hair is more like the coarse wool of a sheep. They have two opposing thumbs on their hands, and both their feet and hands have rough pads and claws to grab onto branches. They have two toes, fused together, on their feet, which they use to comb their fur.",
     "23.5 to 33.5 inches",
     " 20 pounds",
+    "./img/koala.jpg",
+    "./img/koala.jpg",
     "the eucalyptus forests of southeastern and eastern Australia"
   );
 
