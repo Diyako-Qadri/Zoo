@@ -104,8 +104,8 @@ $(() => {
     "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
     "76 cm",
     "10 kg",
-    "./img/Echidna.jpeg",
-    "./img/Echidna.jpeg",
+    "./img/Echidna.jpg",
+    "./img/Echidna.jpg",
     "mammals"
   );
 
@@ -117,8 +117,8 @@ $(() => {
     "It’s not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.   These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida",
     "1.7 m",
     "44 kg",
-    "./img/Cassowary.jpeg",
-    "./img/Cassowary.jpeg",
+    "./img/Cassowary.jpg",
+    "./img/Cassowary.jpg",
     "bird"
   );
   const wallabies = new Animal(
@@ -139,7 +139,8 @@ $(() => {
     "If you watch cartoons, the first thing you think of when you hear the name Tasmanian devil is probably Taz, the whirling, maniacal, always hungry, angry cartoon character. But Tasmanian devils are real and are feisty like the cartoon Taz! Tasmanian devils are the largest carnivorous (meat-eating) marsupials in the world. Tasmanian devils live in Tasmania, a large island just south of Australia. In fact, Tasmania is the only place where they are found in the wild. Adult Tasmanian devils are usually about the size of a small dog. They have coarse brown or black fur and a pudgy appearance that makes them look like baby bears. But don't let their cuteness fool you. They have sharp teeth and strong, muscular jaws that can deliver one of the most powerful bites of any mammal on Earth.",
     "20 to 31 inches",
     "9 to 26pounds",
-    "south of Australia."
+    "./img/Tasmanian-Devil.jpg",
+    "./img/Tasmanian-Devil.jpg"
   );
   const koala = new Animal(
     "Koala",
